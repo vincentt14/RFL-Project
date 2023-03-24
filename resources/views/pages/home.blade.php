@@ -18,7 +18,7 @@
             <span class="mt-1 block text-secondary">- Recycle.</span>
           </p>
           <button
-            class="btnn mb-5 rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-3 px-8 font-bold text-white duration-300 ease-out hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black md:mb-16 lg:mb-20">
+            class="mb-5 rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-3 px-8 font-bold text-white duration-300 ease-out hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black md:mb-16 lg:mb-20">
             <a href="/locations">Yes, I want to recycle!</a>
           </button>
 
