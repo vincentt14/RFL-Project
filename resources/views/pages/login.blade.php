@@ -2,13 +2,13 @@
 
 @section('content')
   <section class="pt-28 pb-24 lg:pt-36 lg:pb-32">
-    <div class="container bg-stone-900 p-10 rounded-xl">
+    <div class="container">
       <div class="w-full px-4">
         <div class="mx-auto mb-6 max-w-xl text-center">
           <h1 class="text-3xl font-bold text-primary">Login</h1>
         </div>
       </div>
-      <div class="mx-auto w-4/5 md:w-2/5">
+      <div class="mx-auto w-4/5 md:w-2/5 bg-stone-900 p-10 rounded-xl">
         <form action="/" method="post">
           <div class="mb-5 w-full px-4">
             <label for="username" class="text-base font-bold text-primary">
@@ -28,7 +28,7 @@
           </div>
           <div class="w-full px-4">
             <button type="submit"
-              class="mt-3 w-full rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-3 text-white duration-300 ease-out hover:bg-white hover:text-black">
+              class="mt-3 w-full rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-3 text-white duration-300 ease-out hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black">
               Login
             </button>
           </div>

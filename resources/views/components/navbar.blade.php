@@ -2,7 +2,7 @@
   <div class="container">
     <div class="relative flex items-center justify-between">
       <div class="px-4">
-        <a href="/" class="block py-6 text-lg font-semibold text-secondary">
+        <a href="/" class="block py-6 text-lg font-semibold text-primary">
           RFL<span class="text-primary">.</span>
         </a>
       </div>
