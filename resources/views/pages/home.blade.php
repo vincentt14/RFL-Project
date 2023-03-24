@@ -1,100 +1,103 @@
 @extends('layouts.app')
 
 @section('content')
-  <section class="pt-28 pb-24 lg:pt-36 lg:pb-32">
+  <section class="pt-28 pb-24 lg:pt-48 lg:pb-32">
     <div class="container">
       <div class="flex flex-wrap">
-        <div class="w-full self-center px-4 lg:w-1/2">
+        <div class="w-full self-center pl-4 pr-4 lg:w-1/2 lg:pr-10">
           <h1 class="text-base font-medium text-primary md:text-xl">
             Welcome to
-            <p class="mt-1 block text-4xl font-bold text-secondary lg:text-5xl">Dia<span class="text-primary">Care</span>.
+            <p class="mt-1 block text-4xl font-bold text-secondary lg:text-5xl">R<span class="text-primary">ecycling</span>
+              F<span class="text-primary">or</span> L<span class="text-primary">ife</span>.
             </p>
           </h1>
-          <h2 class="mb-2 mt-2 text-lg font-light text-primary lg:text-2xl">A place that provides all about Diabetes
-            Mellitus.</h2>
-          <div class="mb-2 flex items-center">
-            <h2 class="mb-1 text-lg font-light text-primary lg:text-2xl">You can &ZeroWidthSpace;</h2>
-            <h2 class="typewrite"></h2>
-          </div>
+          <h2 class="mb-2 mt-2 text-justify text-lg font-light text-primary lg:text-2xl">We offer FREE pickup from your
+            address and pay you upon collection. Electronic trade-in & recycling made easy & rewarding.</h2>
           <p class="mb-10 max-w-md text-slate-500">
-            "A positive mindset can overcome the most dire of situations."
-            <span class="mt-1 block text-secondary">- Scott Earle.</span>
+            "Our nearby Heroes are ready to collect!"
+            <span class="mt-1 block text-secondary">- Recycle.</span>
           </p>
-          <div class="flex flex-col md:flex-row">
-            <button
-              class="btnn mb-5 rounded-sm border-2 border-black bg-black py-3 px-8 text-white duration-300 ease-out hover:bg-white hover:text-black focus:outline-none focus:ring focus:ring-blue-500 md:mb-16 lg:mb-20">
-              <a href="#definition">What is Diabetes?</a>
-            </button>
-            <button
-              class="btnn mb-16 rounded-sm border-2 border-black bg-black py-3 px-8 text-white duration-300 ease-out hover:bg-white hover:text-black focus:outline-none focus:ring focus:ring-blue-500 md:ml-10 lg:mb-20">
-              <a href="/diagnose">Diagnose</a>
-            </button>
-          </div>
+          <button
+            class="btnn mb-5 rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-3 px-8 font-bold text-white duration-300 ease-out hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black md:mb-16 lg:mb-20">
+            <a href="/locations">Yes, I want to recycle!</a>
+          </button>
+
         </div>
         <div
-          class="bayangan hidden w-full self-center rounded-sm border-2 border-primary bg-white px-4 md:block lg:w-1/2">
+          class="bayangan hidden w-full self-center rounded-2xl border-2 border-secondary bg-white px-4 md:block lg:w-1/2">
           {{-- Lottie --}}
           <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-          <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_QU0V6MuXdA.json" background="transparent"
-            speed="1" style="width: 400px; height: 400px;" loop autoplay class="mx-auto"></lottie-player>
+          <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_qaemdbel.json" speed="1"
+            style="width: 400px; height: 400px;" loop autoplay class="mx-auto"></lottie-player>
         </div>
       </div>
     </div>
   </section>
-  <section id="definition" class="bg-[#f2f6fc] pb-16 pt-32 lg:pb-28">
+  <section id="definition" class="bg-gradient-to-r from-[#80c54e] to-[#44b25b] pb-16 pt-20 lg:pb-20">
     <div class="container">
       <div class="w-full px-4">
-        <div class="mb-5 max-w-xl">
-          <h4 class="mb-2 text-lg font-semibold text-secondary">What is</h4>
-          <h2 class="mt-1 mb-4 text-4xl font-bold text-primary lg:text-5xl">Diabetes?</h2>
-          <p class="text-md font-mono font-medium text-slate-500 lg:text-lg">
-            Also called: <span class="text-secondary">diabetes mellitus</span>
-          </p>
+        <div class="m-auto max-w-xl">
+          <h2 class="mt-1 mb-20 text-center text-4xl font-bold text-primary lg:text-5xl">How it Works?</h2>
         </div>
-        <p class="text-justify text-lg font-light text-primary">Diabetes is a chronic (long-lasting) health condition that
-          affects how your body turns food into energy. <br></br>
-
-          Your body breaks down most of the food you eat into sugar (glucose) and releases it into your bloodstream. When
-          your blood sugar goes up, it signals your pancreas to release insulin. Insulin acts like a key to let the blood
-          sugar into your body’s cells for use as energy. <br></br>
-
-          With diabetes, your body doesn’t make enough insulin or can’t use it as well as it should. When there isn’t
-          enough insulin or cells stop responding to insulin, too much blood sugar stays in your bloodstream. Over time,
-          that can cause serious health problems, such as heart disease, vision loss, and kidney disease.
-        <p>
-      </div>
-      <div class="container">
-        <div class="mt-10 grid grid-cols-3">
-          @for ($i = 0; $i < count($types); $i++)
-            <button id="warna" class="mb-6 rounded-sm border-2 bg-black py-3 px-3 text-white"
-              onclick="changeType({{ $i }})">
-              <p class="text-xs md:text-base">{{ $types[$i]['slug'] }}</p>
-            </button>
-          @endfor
-        </div>
-      </div>
-      <div id="typee"></div>
-    </div>
-  </section>
-
-  <script>
-    const a = @json($types);
-    const typee = document.getElementById('typee');
-    const warna = document.getElementById('warna');
-    console.log(warna);
-    const changeType = (id) => {
-      typee.innerHTML = "";
-
-      typee.innerHTML += `
-        <div class="container">
-          <div class="w-full rounded-sm border border-[#BBBBBB] bg-white p-3">
-            <div class="m-3">
-              <p class="font-base mb-3 text-lg text-primary lg:text-2xl">${a[id].name}</p>
-              <p class="text-justify text-lg font-light text-primary">${a[id].description}</p>
+        <div class="grid grid-rows-3 gap-4 text-white md:grid-cols-3 md:grid-rows-none">
+          <div class="flex w-full rounded-xl bg-black p-12">
+            <i class="self-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-list">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+              </svg>
+            </i>
+            <div class="content ml-5">
+              <h3 class="text-xl font-bold">Step 1</h3>
+              <p>Search or choose Recycle place.</p>
             </div>
           </div>
+          <div class="flex w-full rounded-xl bg-black p-12">
+            <i class="self-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-file-plus">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="12" y1="18" x2="12" y2="12"></line>
+                <line x1="9" y1="15" x2="15" y2="15"></line>
+              </svg>
+            </i>
+            <div class="content ml-5">
+              <h3 class="text-xl font-bold">Step 2</h3>
+              <p>Create Recycle Location.</p>
+            </div>
+          </div>
+          <div class="flex w-full rounded-xl bg-black p-12">
+            <i class="self-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-x-octagon">
+                <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </i>
+            <div class="content ml-5">
+              <h3 class="text-xl font-bold">Step 3</h3>
+              <p>Delete Recycle Location.</p>
+            </div>
+          </div>
+
         </div>
-      `;
-    }
-  </script>
+        <div class="m-auto mt-20 flex max-w-xl items-center justify-center">
+          <button
+            class="rounded-3xl bg-black py-3 px-8 font-bold text-white duration-300 ease-out hover:bg-white hover:text-black">
+            <a href="/locations">Yes, I want to recycle!</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 @endsection

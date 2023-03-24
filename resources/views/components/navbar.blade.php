@@ -3,7 +3,7 @@
     <div class="relative flex items-center justify-between">
       <div class="px-4">
         <a href="/" class="block py-6 text-lg font-semibold text-secondary">
-          RFL.
+          RFL<span class="text-primary">.</span>
         </a>
       </div>
       <div class="flex items-center px-4">
@@ -31,7 +31,7 @@
             </li>
             <li class="group">
               <button
-                class="ml-5 rounded-3xl border-2 border-secondary bg-black py-2 px-5 text-white duration-300 ease-out hover:bg-white hover:text-black">
+                class="ml-5 rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-2 px-5 text-white duration-300 ease-out font-bold hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black">
                 <a href="/login">Login</a>
               </button>
             </li>
