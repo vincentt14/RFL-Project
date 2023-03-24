@@ -14,23 +14,23 @@
         <ul class="text-black">
           <h3 class="mb-5 text-xl font-semibold text-white">Shortcuts</h3>
           <li>
-            <a href="/" target="blank" class="mb-2 inline-block text-base hover:text-white">
+            <a href="/" class="mb-2 inline-block text-base hover:text-white">
               Home
             </a>
           </li>
           <li>
-            <a href="/diagnose" target="blank" class="mb-2 inline-block text-base hover:text-white">
-              Diagnose
+            <a href="/location" class="mb-2 inline-block text-base hover:text-white">
+              Recycle Locations
             </a>
           </li>
           <li>
-            <a href="/discussion" target="blank" class="mb-2 inline-block text-base hover:text-white">
-              Discussion
+            <a href="/dashboard"class="mb-2 inline-block text-base hover:text-white">
+              Dashboard
             </a>
           </li>
           <li>
-            <a href="/medicines" target="blank" class="mb-2 inline-block text-base hover:text-white">
-              Medicines
+            <a href="/login"class="mb-2 inline-block text-base hover:text-white">
+              Login
             </a>
           </li>
         </ul>
@@ -42,8 +42,6 @@
             <a href="/about" class="mb-2 inline-block text-base hover:text-white">
               RFL
             </a>
-          </li>
-          <li>
           </li>
         </ul>
       </div>

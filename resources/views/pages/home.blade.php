@@ -40,7 +40,7 @@
         </div>
         <div class="grid grid-rows-3 gap-4 text-white md:grid-cols-3 md:grid-rows-none">
           <div class="flex w-full rounded-xl bg-black p-12">
-            <i class="self-center">
+            <i class="self-center text-slate-500">
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="feather feather-list">
@@ -55,10 +55,11 @@
             <div class="content ml-5">
               <h3 class="text-xl font-bold">Step 1</h3>
               <p>Search or choose Recycle place.</p>
+              <p class="text-slate-500">You can search recycle places in the Recycle Location page.</p>
             </div>
           </div>
           <div class="flex w-full rounded-xl bg-black p-12">
-            <i class="self-center">
+            <i class="self-center text-slate-500">
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="feather feather-file-plus">
@@ -71,10 +72,11 @@
             <div class="content ml-5">
               <h3 class="text-xl font-bold">Step 2</h3>
               <p>Create Recycle Location.</p>
+              <p class="text-slate-500">You can add Recycle Location so that people can recycle at your place.</p>
             </div>
           </div>
           <div class="flex w-full rounded-xl bg-black p-12">
-            <i class="self-center">
+            <i class="self-center text-slate-500">
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="feather feather-x-octagon">
@@ -86,6 +88,7 @@
             <div class="content ml-5">
               <h3 class="text-xl font-bold">Step 3</h3>
               <p>Delete Recycle Location.</p>
+              <p class="text-slate-500">You also can delete your own recycle place.</p>
             </div>
           </div>
 
