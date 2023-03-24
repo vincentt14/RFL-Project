@@ -3,14 +3,13 @@
 @section('content')
   <section class="pt-28 pb-24 lg:pt-36 lg:pb-32">
     <div class="container">
-      <div class="w-full px-4 ">
+      <div class="w-full px-4">
         <div class="mx-auto mb-6 max-w-xl text-center">
           <h2 class="text-3xl font-bold text-primary lg:text-3xl">Register</h2>
         </div>
       </div>
-      <div class="mx-auto w-4/5 md:w-2/5 bg-stone-900 p-10 rounded-xl">
+      <div class="mx-auto w-4/5 rounded-xl bg-stone-900 p-10 md:w-2/5">
         <form action="/" method="post">
-
           <div class="mb-5 w-full px-4">
             <label for="username" class="text-base font-bold text-primary">
               Username
@@ -25,7 +24,7 @@
             </label>
             <input type="text" id="email" name="email"
               class="w-full rounded-3xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-              required  />
+              required />
           </div>
           <div class="mb-5 w-full px-4">
             <label for="phone" class="text-base font-bold text-primary">
@@ -33,7 +32,7 @@
             </label>
             <input type="number" id="phone" name="phone"
               class="w-full rounded-3xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-              required  />
+              required />
           </div>
           <div class="mb-5 w-full px-4">
             <label for="date" class="text-base font-bold text-primary">
@@ -41,7 +40,7 @@
             </label>
             <input type="date" id="date" name="date"
               class="w-full rounded-3xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-              required  />
+              required />
           </div>
           <div class="mb-8 w-full px-4">
             <label for="password" class="text-base font-bold text-primary">
@@ -59,7 +58,8 @@
           </div>
         </form>
         <div class="mt-4 w-full px-4 text-white">
-          <p>Already have an Account? <span class="text-secondary hover:text-white"><a href="/login">Login</a></span> </p>
+          <p>Already have an Account? <span class="text-secondary hover:text-white"><a href="/login">Login</a></span>
+          </p>
         </div>
       </div>
     </div>
