@@ -24,13 +24,13 @@
             <td class="px-6 py-2">{{ $dummy['name'] }}</td>
             <td class="text-justify px-6 py-2">{{ $dummy['location'] }}</td>
             <td class="flex px-6 py-2">
-              <a class="mx-2 text-blue-300" href="/dashboard/posts/{{ $dummy['id'] }}">
+              <a class="mx-2 text-blue-300" href="/dummy/{{ $dummy['id'] }}">
                 View
               </a>
-              <a class="mx-2 text-yellow-300" href="/dashboard/posts/{{ $dummy['id'] }}/edit">
+              <a class="mx-2 text-yellow-300" href="/dummy/{{ $dummy['id'] }}/edit">
                 Edit
               </a>
-              <form class="mx-2 text-red-400" action="/dashboard/posts/{{ $dummy['id'] }}" method="post" class="d-inline">
+              <form class="mx-2 text-red-400" action="/dummy/{{ $dummy['id'] }}" method="post" class="d-inline">
                 @method('delete')
                 @csrf
                 <button onClick="return confirm('Are you sure?')">
