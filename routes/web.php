@@ -157,3 +157,7 @@ Route::get('/locations', function () {
         "dummys" => $data_dummy,
     ]);
 });
+
+Route::get('/create', function () {
+    return view('pages.create');
+});

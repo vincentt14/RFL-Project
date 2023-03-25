@@ -22,7 +22,7 @@
       </form>
       <div class="mt-10 grid w-full grid-cols-1 flex-wrap gap-5 px-4 md:grid-cols-2 lg:grid-cols-4">
         @foreach ($dummys as $dummy)
-          <div class="mb-5 rounded-xl bg-gradient-to-b from-[#89c84d] to-[#45b25a] p-4">
+          <div class="mb-5 rounded-xl bg-gradient-to-b from-[#54b756] to-[#45b25a] p-4">
             <div class="overflow-hidden rounded-xl border-2 border-primary shadow-lg">
               <img src="https://placehold.jp/300x200.png" alt="{{ $dummy['name'] }}" width="100%" />
             </div>

@@ -80,7 +80,7 @@
             <td class="px-6 py-2">{{ $volunteer['email'] }}</td>
             <td class="px-6 py-2">{{ $volunteer['date'] }}</td>
             <td class="px-6 py-2">{{ $volunteer['phoneNum'] }}</td>
-            <td class="flex px-6 py-2">
+            <td class="flex items-center px-6 py-2">
               <a class="mx-2 text-yellow-300" href="/dummy/{{ $dummy['id'] }}/edit">
                 Edit
               </a>
