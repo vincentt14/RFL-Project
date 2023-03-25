@@ -29,7 +29,7 @@
               <a class="mx-2 text-blue-300" href="/dummy/{{ $dummy['id'] }}">
                 View
               </a>
-              <a class="mx-2 text-yellow-300" href="/dummy/{{ $dummy['id'] }}/edit">
+              <a class="mx-2 text-yellow-300" href="/editRecycler">
                 Edit
               </a>
               <form class="mx-2 text-red-400" action="/dummy/{{ $dummy['id'] }}" method="post" class="d-inline">
@@ -62,7 +62,7 @@
             Email
           </th>
           <th class="px-6 py-3">
-            Date Validate
+            Volunteer Date
           </th>
           <th class="px-6 py-3">
             Phone Number
@@ -81,7 +81,7 @@
             <td class="px-6 py-2">{{ $volunteer['date'] }}</td>
             <td class="px-6 py-2">{{ $volunteer['phoneNum'] }}</td>
             <td class="flex items-center px-6 py-2">
-              <a class="mx-2 text-yellow-300" href="/dummy/{{ $dummy['id'] }}/edit">
+              <a class="mx-2 text-yellow-300" href="/editVolunteer">
                 Edit
               </a>
               <form class="mx-2 text-red-400" action="/dummy/{{ $dummy['id'] }}" method="post" class="d-inline">

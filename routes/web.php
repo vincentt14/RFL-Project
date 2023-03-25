@@ -161,3 +161,11 @@ Route::get('/locations', function () {
 Route::get('/create', function () {
     return view('pages.create');
 });
+
+Route::get('/editRecycler', function () {
+    return view('pages.editRecycler');
+});
+
+Route::get('/editVolunteer', function () {
+    return view('pages.editVolunteer');
+});
