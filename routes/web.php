@@ -105,7 +105,7 @@ Route::get('dummy/{id}', function ($id) {
             $new_dummy = $dummy;
         }
     }
-    return view('pages.recyclerDetail', [
+    return view('pages.detail', [
         "dummy" => $new_dummy
     ]);
 });
