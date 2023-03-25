@@ -71,8 +71,8 @@
             </i>
             <div class="content ml-5">
               <h3 class="text-xl font-bold">Step 2</h3>
-              <p>Create Recycle Location.</p>
-              <p class="text-slate-500">You can add Recycle Location so that people can recycle at your place.</p>
+              <p>Be a Volunteer.</p>
+              <p class="text-slate-500">You can be a volunteer to get and collect the trash.</p>
             </div>
           </div>
           <div class="flex w-full rounded-xl bg-black p-12">
