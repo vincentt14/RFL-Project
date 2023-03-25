@@ -58,7 +58,8 @@
           </div>
         </form>
         <div class="mt-4 w-full px-4 text-white">
-          <p>Already have an Account? <span class="text-secondary hover:text-white"><a href="/login">Login</a></span>
+          <p>Already have an Account? <span class="ml-1 font-bold text-secondary hover:text-white"><a
+                href="/login">Login</a></span>
           </p>
         </div>
       </div>

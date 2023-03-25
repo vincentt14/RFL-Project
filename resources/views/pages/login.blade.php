@@ -8,7 +8,7 @@
           <h1 class="text-3xl font-bold text-primary">Login</h1>
         </div>
       </div>
-      <div class="mx-auto w-4/5 md:w-2/5 bg-stone-900 p-10 rounded-xl">
+      <div class="mx-auto w-4/5 rounded-xl bg-stone-900 p-10 md:w-2/5">
         <form action="/" method="post">
           <div class="mb-5 w-full px-4">
             <label for="username" class="text-base font-bold text-primary">
@@ -34,7 +34,8 @@
           </div>
         </form>
         <div class="mt-4 w-full px-4 text-white">
-          <p>Don't Have an Account? <span class="text-secondary hover:text-white"><a href="/register">Register</a></span> </p>
+          <p>Don't Have an Account? <span class="ml-1 font-bold text-secondary hover:text-white"><a
+                href="/register">Register</a></span> </p>
         </div>
       </div>
     </div>
