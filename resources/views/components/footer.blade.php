@@ -1,4 +1,4 @@
-<footer class="mt-16 border-t-2 border-black bg-secondary pt-24 pb-5">
+<footer class="mt-16 border-t-2 border-black  bg-gradient-to-r from-[#89c84d] to-[#45b25a] pt-24 pb-5">
   <div class="container">
     <div class="flex flex-wrap">
       <div class="mb-12 w-full flex-col place-items-center font-medium md:flex md:w-1/3">
@@ -8,6 +8,7 @@
           </h3>
           <p class="text-white">Vincent</p>
           <p class="text-white">Rucci</p>
+          <p class="text-white">Darren</p>
         </ul>
       </div>
       <div class="mb-12 w-full flex-col place-items-center md:flex md:w-1/3">
@@ -28,19 +29,15 @@
               Dashboard
             </a>
           </li>
-          <li>
-            <a href="/login"class="mb-2 inline-block text-base hover:text-white">
-              Login
-            </a>
-          </li>
+
         </ul>
       </div>
       <div class="mb-12 w-full flex-col place-items-center md:flex md:w-1/3">
         <ul class="text-black">
-          <h3 class="mb-5 text-xl font-semibold text-white">About</h3>
+          <h3 class="mb-5 text-xl font-semibold text-white">Join RFL</h3>
           <li>
-            <a href="/about" class="mb-2 inline-block text-base hover:text-white">
-              RFL
+            <a href="/login"class="mb-2 inline-block text-base hover:text-white">
+              Login
             </a>
           </li>
         </ul>

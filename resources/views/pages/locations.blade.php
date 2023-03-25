@@ -20,14 +20,19 @@
             placeholder="Search Location" autofocus />
         </div>
       </form>
-      <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
+      <div class="xl:w-xl flex w-full flex-wrap justify-center px-4 xl:mx-auto">
         @foreach ($dummys as $dummy)
-          <div class="mb-12 p-4 mx-2 md:w-1/4 bg-stone-900">
-            <h3 class="font-semibold text-white text-xl mt-5 mb-3">
+          <div class="mb-12 rounded-xl bg-gradient-to-b from-[#89c84d] to-[#45b25a] p-4 md:w-1/2 lg:w-1/4 gap-10">
+            <div
+              class="cursor-pointer overflow-hidden rounded-xl border-2 border-primary shadow-lg hover:border-secondary">
+              <img src="https://placehold.jp/300x200.png" alt="{{ $dummy['name'] }}" width="w-full" />
+            </div>
+            <h3 class="mt-5 mb-3 text-xl font-semibold text-white">
               {{ $dummy['name'] }}
-              <p class="text-primary">{{ $dummy['location'] }}</p>
             </h3>
-            <p class="text-primary">{{ $dummy['description'] }}</p>
+            <p class="my-3 text-justify text-primary">Location : <span
+                class="text-black">{{ $dummy['location'] }}</span> </p>
+            <p class="text-justify font-light text-black">{{ $dummy['description'] }}</p>
           </div>
         @endforeach
       </div>
