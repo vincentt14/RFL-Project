@@ -12,9 +12,11 @@ class RecyclerController extends Controller
 
     public function __construct()
     {
-        $this->middleware('admin');
-        $this->middleware('auth')->only('index');
+        $this->middleware('auth')->only([
+            'index'
+        ]);
         $this->middleware('guest')->only('index');
+        $this->middleware('admin');
     }
 
     /**

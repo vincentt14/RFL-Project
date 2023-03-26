@@ -62,8 +62,6 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $rules = [
-            'username' => 'required',
-            'email' => 'required|email:dns',
             'volunteer_date' => 'required',
             'phone_number' => 'required|numeric'
         ];

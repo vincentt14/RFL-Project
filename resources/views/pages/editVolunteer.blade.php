@@ -29,7 +29,7 @@
                 Volunteer Name
               </label>
               <input type="text" id="username" name="username"
-                class="w-full rounded-xl border-2 border-red-300 bg-slate-300 p-3 text-slate-600 focus:outline-none focus:ring focus:ring-secondary"
+                class="w-full rounded-xl border-2 border-yellow-300 bg-slate-300 p-3 text-slate-600 focus:outline-none focus:ring focus:ring-secondary"
                 value="{{ @old('username', $user->username) }}" disabled />
             </div>
             <div class="mb-5 w-full px-4">
@@ -37,7 +37,7 @@
                 Volunteer Email
               </label>
               <input type="text" id="email" name="email"
-                class="w-full rounded-xl border-2 border-red-300 bg-slate-300 p-3 text-slate-600 focus:outline-none focus:ring focus:ring-secondary"
+                class="w-full rounded-xl border-2 border-yellow-300 bg-slate-300 p-3 text-slate-600 focus:outline-none focus:ring focus:ring-secondary"
                 value="{{ @old('email', $user->email) }}" disabled />
             </div>
             <div class="mb-5 w-full px-4">
