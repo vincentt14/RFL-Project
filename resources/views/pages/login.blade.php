@@ -15,16 +15,21 @@
               Username
             </label>
             <input type="text" id="username" name="username"
-              class="w-full rounded-3xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-              required autofocus />
+              class="@error('username') border-red-500 @else border-secondary @enderror w-full rounded-3xl border-2 bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
+              value="{{ @old('username') }}" />
+            @error('username')
+              <p class="text-red-500">{{ $message }}</p>
+            @enderror
           </div>
           <div class="mb-8 w-full px-4">
             <label for="password" class="text-base font-bold text-primary">
               Password
             </label>
             <input type="password" id="password" name="password"
-              class="w-full rounded-3xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-              required />
+              class="@error('password') border-red-500 @else border-secondary @enderror w-full rounded-3xl border-2 bg-white p-3 focus:outline-none focus:ring focus:ring-secondary" />
+            @error('password')
+              <p class="text-red-500">{{ $message }}</p>
+            @enderror
           </div>
           <div class="w-full px-4">
             <button type="submit"

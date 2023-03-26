@@ -29,11 +29,8 @@
                 Volunteer Name
               </label>
               <input type="text" id="username" name="username"
-                class="@error('username') border-red-500 @else border-secondary @enderror w-full rounded-xl border-2 bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-                value="{{ @old('username', $user->username) }}" />
-              @error('username')
-                <p class="text-red-500">{{ $message }}</p>
-              @enderror
+                class="w-full rounded-xl border-2 border-red-300 bg-slate-300 p-3 text-slate-600 focus:outline-none focus:ring focus:ring-secondary"
+                value="{{ @old('username', $user->username) }}" disabled />
             </div>
             <div class="mb-5 w-full px-4">
               <label for="email" class="text-base font-bold text-primary">

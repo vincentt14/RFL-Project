@@ -9,46 +9,61 @@
         </div>
       </div>
       <div class="mx-auto w-4/5 rounded-xl bg-stone-900 p-10 md:w-2/5">
-        <form action="/" method="post">
+        <form action="/register" method="post">
+          @csrf
           <div class="mb-5 w-full px-4">
             <label for="username" class="text-base font-bold text-primary">
               Username
             </label>
             <input type="text" id="username" name="username"
-              class="w-full rounded-3xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-              required autofocus />
+              class="@error('username') border-red-500 @else border-secondary @enderror w-full rounded-3xl border-2 bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
+              value="{{ @old('username') }}" />
+            @error('username')
+              <p class="text-red-500">{{ $message }}</p>
+            @enderror
           </div>
           <div class="mb-5 w-full px-4">
             <label for="email" class="text-base font-bold text-primary">
               Email
             </label>
             <input type="text" id="email" name="email"
-              class="w-full rounded-3xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-              required />
+              class="@error('email') border-red-500 @else border-secondary @enderror w-full rounded-3xl border-2 bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
+              value="{{ @old('email') }}" />
+            @error('email')
+              <p class="text-red-500">{{ $message }}</p>
+            @enderror
           </div>
           <div class="mb-5 w-full px-4">
-            <label for="phone" class="text-base font-bold text-primary">
+            <label for="phone_number" class="text-base font-bold text-primary">
               Phone Number
             </label>
-            <input type="text" id="phone" name="phone"
-              class="w-full rounded-3xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-              required />
+            <input type="text" id="phone_number" name="phone_number"
+              class="@error('phone_number') border-red-500 @else border-secondary @enderror w-full rounded-3xl border-2 bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
+              value="{{ @old('phone_number') }}" />
+            @error('phone_number')
+              <p class="text-red-500">{{ $message }}</p>
+            @enderror
           </div>
           <div class="mb-5 w-full px-4">
-            <label for="date" class="text-base font-bold text-primary">
+            <label for="volunteer_date" class="text-base font-bold text-primary">
               Volunteer Date
             </label>
-            <input type="date" id="date" name="date"
-              class="w-full rounded-3xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-              required />
+            <input type="date" id="volunteer_date" name="volunteer_date"
+              class="@error('volunteer_date') border-red-500 @else border-secondary @enderror w-full rounded-3xl border-2 bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
+              value="{{ @old('volunteer_date') }}" />
+            @error('volunteer_date')
+              <p class="text-red-500">{{ $message }}</p>
+            @enderror
           </div>
           <div class="mb-8 w-full px-4">
             <label for="password" class="text-base font-bold text-primary">
               Password
             </label>
             <input type="password" id="password" name="password"
-              class="w-full rounded-3xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-              required />
+              class="@error('password') border-red-500 @else border-secondary @enderror w-full rounded-3xl border-2 bg-white p-3 focus:outline-none focus:ring focus:ring-secondary" />
+            @error('password')
+              <p class="text-red-500">{{ $message }}</p>
+            @enderror
           </div>
           <div class="w-full px-4">
             <button type="submit"

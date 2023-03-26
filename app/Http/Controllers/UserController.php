@@ -45,7 +45,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $d = strtotime($user['volunteer_date']);
-        $user['volunteer_date']= date("Y-m-d", $d);
+        $user['volunteer_date'] = date("Y-m-d", $d);
         return view('pages.editVolunteer', [
             'user' => $user
         ]);
@@ -60,7 +60,7 @@ class UserController extends Controller
             'username' => 'required',
             'email' => 'required|email:dns',
             'volunteer_date' => 'required',
-            'phone_number' => 'required'
+            'phone_number' => 'required|numeric'
         ];
 
         $validateData = $request->validate($rules);
