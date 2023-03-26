@@ -69,7 +69,7 @@ class UserController extends Controller
         $validateData = $request->validate($rules);
 
         $user->update($validateData);
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('success', 'Volunteer was updated successfully');;
     }
 
     /**
@@ -78,6 +78,6 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         User::destroy($user->id);
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('success', 'Volunteer was deleted successfully');;
     }
 }

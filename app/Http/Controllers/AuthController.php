@@ -21,9 +21,13 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+
+            $redirectLink = '/';
+            if (Auth::user()->is_admin == 1) $redirectLink = '/dashboard';
+
+            return redirect()->intended($redirectLink)->with('success', 'Logged in successfully as ' . Auth::user()->username);
         }
-        return back()->with('loginError', 'Login failed!');
+        return back()->with('error', 'Login failed, please check your credentials');
     }
     public function register()
     {
@@ -42,7 +46,8 @@ class AuthController extends Controller
         $validatedData['password'] = bcrypt($validatedData['password']);
 
         User::create($validatedData);
-        return redirect('/login');
+
+        return redirect('/login')->with('success', 'Account registered successfully');
 
     }
     public function logout(Request $request)
@@ -50,6 +55,6 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/');
+        return redirect('/')->with('success', 'Logged out successfully');
     }
 }

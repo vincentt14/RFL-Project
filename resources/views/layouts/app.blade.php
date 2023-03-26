@@ -14,6 +14,27 @@
 </head>
 
 <body>
+  @if(session()->has('success'))
+    <div
+        class="sticky w-[300px] min-h-[50px] flex justify-between gap-x-4 bg-green-500 text-white left-1/2 -translate-x-1/2 top-20 px-5 pt-3.5 pb-4 z-20">
+      <p>{{ session('success') }}</p>
+      <button
+          class="h-fit hover:text-white/75"
+          onclick="this.parentNode.parentNode.removeChild(this.parentNode)">
+          X
+      </button>
+    </div>
+  @elseif(session()->has('error'))
+    <div
+        class="sticky w-[300px] min-h-[50px] flex justify-between gap-x-4 bg-red-500 text-white left-1/2 -translate-x-1/2 top-20 px-5 pt-3.5 pb-4 z-20">
+      <p>{{ session('error') }}</p>
+      <button
+          class="h-fit hover:text-white/75"
+          onclick="this.parentNode.parentNode.removeChild(this.parentNode)">
+          X
+      </button>
+    </div>
+  @endif
   @include('components.navbar')
 
   <main>

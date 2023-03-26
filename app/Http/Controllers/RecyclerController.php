@@ -56,7 +56,7 @@ class RecyclerController extends Controller
         }
 
         Recycler::create($validatedData);
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('success', 'Recycler Location was added successfully');
     }
 
     /**
@@ -103,7 +103,7 @@ class RecyclerController extends Controller
         }
 
         $recycler->update($validatedData);
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('success', 'Recycler Location was updated successfully');;
     }
 
     /**
@@ -115,6 +115,6 @@ class RecyclerController extends Controller
             Storage::delete($recycler->image);
         }
         Recycler::destroy($recycler->id);
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('success', 'Recycler Location was deleted successfully');;
     }
 }
