@@ -41,6 +41,7 @@ class DatabaseSeeder extends Seeder
 
         Recycler::create([
             'name' => 'babon',
+            'image' => 'recycler-images/4XZmlBWDkiAOGciHqJJndebxRRe8SFkMdzAdpJzY.jpg',
             'location' => 'jl.purnama no.1',
             'description' => 'jalan jalan menemu bukit, bukit bukitnya bergelombang, wahai kamu para penuntit, pantatmu akan berlubang'
         ]);

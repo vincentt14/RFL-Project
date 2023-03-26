@@ -38,13 +38,18 @@ class RecyclerController extends Controller
      */
     public function store(StoreRecyclerRequest $request)
     {
-        $validate_data = $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required',
+            'image' => 'image|file|max:1024',
             'location' => 'required',
             'description' => 'required',
         ]);
 
-        Recycler::create($validate_data);
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('recycler-images');
+        }
+
+        Recycler::create($validatedData);
         return redirect('/dashboard');
     }
 

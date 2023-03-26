@@ -25,8 +25,8 @@
         <div
           class="container rounded-xl bg-stone-900 p-10 lg:grid lg:grid-flow-col lg:grid-rows-2 lg:items-center lg:gap-5">
           <div class="row-span-3 mb-8 lg:mb-0">
-            <img src="https://placehold.jp/300x200.png" alt="{{ $recycler['name'] }}"
-              class="rounded-xl border-2 border-primary" />
+            <img src="{{ asset('storage/' . $recycler['image']) }}" alt="{{ $recycler['name'] }}"
+              class="rounded-xl border-2 border-primary w-[350px]" />
           </div>
           <div class="col-span-1 mb-8 lg:mb-0">
             <p class="mx-5 my-2 text-xl text-primary">Recycler name : </p>

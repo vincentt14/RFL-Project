@@ -31,7 +31,7 @@
           @foreach ($recyclers as $recycler)
             <div class="mb-5 rounded-xl bg-gradient-to-b from-[#54b756] to-[#45b25a] p-4">
               <div class="overflow-hidden rounded-xl border-2 border-primary shadow-lg">
-                <img src="https://placehold.jp/300x200.png" alt="{{ $recycler['name'] }}" width="100%" />
+                <img src="{{ asset('storage/' . $recycler['image']) }}" alt="{{ $recycler['name'] }}" width="100%" />
               </div>
               <h3 class="mt-5 mb-3 text-xl font-semibold text-white">
                 {{ $recycler['name'] }}
@@ -43,8 +43,8 @@
             </div>
           @endforeach
         @else
-          <h2 class="mb-5 mt-2 text-lg font-light text-primary lg:text-2xl">Recycler <span
-              class="font-bold">Not Found</span>.
+          <h2 class="mb-5 mt-2 text-lg font-light text-primary lg:text-2xl">Recycler <span class="font-bold">Not
+              Found</span>.
           </h2>
         @endif
       </div>

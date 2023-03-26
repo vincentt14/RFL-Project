@@ -21,7 +21,7 @@
 
       <div class="flex flex-wrap">
         <div class="w-full self-center pr-4 lg:w-1/2">
-          <form action="/recyclers" method="post">
+          <form action="/recyclers" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-5 w-full px-4">
               <label for="name" class="text-base font-bold text-primary">
@@ -30,6 +30,17 @@
               <input type="text" id="name" name="name"
                 class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
                 autofocus />
+            </div>
+            <div class="mb-5 w-full px-4">
+              <p class="mb-3 text-base font-bold text-primary">
+                Upload Image
+              </p>
+              <label
+                class="mr-5 rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-3 px-8 font-bold text-white duration-300 ease-out hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black lg:mb-2">
+                Choose Image
+                <input type="file" id="image" name="image" class="hidden" onchange="previewImage()" />
+              </label>
+              <img class="mt-5 w-[350px] img-preview img-fluid rounded-xl">
             </div>
             <div class="mb-5 w-full px-4">
               <label for="location" class="text-base font-bold text-primary">
@@ -64,4 +75,20 @@
       </div>
     </div>
   </section>
+
+  <script>
+    const previewImage = () => {
+      const image = document.querySelector('#image');
+      const imgPreview = document.querySelector('.img-preview');
+
+      imgPreview.style.display = 'block';
+
+      const oFReader = new FileReader();
+      oFReader.readAsDataURL(image.files[0]);
+
+      oFReader.onload = function(oFREvent) {
+        imgPreview.src = oFREvent.target.result;
+      }
+    }
+  </script>
 @endsection

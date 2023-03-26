@@ -44,7 +44,7 @@
               <label for="phone_number" class="text-base font-bold text-primary">
                 Phone Number
               </label>
-              <input type="number" id="phone_number" name="phone_number"
+              <input type="text" id="phone_number" name="phone_number"
                 class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
                 value="{{ @old('phone_number', $user->phone_number) }}" />
             </div>
