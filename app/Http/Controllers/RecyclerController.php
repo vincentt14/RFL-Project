@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Recycler;
 use App\Http\Requests\StoreRecyclerRequest;
 use App\Http\Requests\UpdateRecyclerRequest;
-use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class RecyclerController extends Controller
 {
@@ -40,7 +40,7 @@ class RecyclerController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required',
-            'image' => 'image|file|max:1024',
+            'image' => 'required|image|file|max:1024',
             'location' => 'required',
             'description' => 'required',
         ]);
@@ -81,11 +81,20 @@ class RecyclerController extends Controller
 
         $rules = [
             'name' => 'required',
+            'image' => 'image|file|max:1024',
             'location' => 'required',
-            'description' => 'required',
+            'description' => 'required', 
         ];
 
         $validatedData = $request->validate($rules);
+
+        
+        if($request->file('image')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('recycler-images');
+        }
 
         $recycler->update($validatedData);
         return redirect('/dashboard');
@@ -96,6 +105,9 @@ class RecyclerController extends Controller
      */
     public function destroy(Recycler $recycler)
     {
+        if($recycler->image){
+            Storage::delete($recycler->image);
+        }
         Recycler::destroy($recycler->id);
         return redirect('/dashboard');
     }

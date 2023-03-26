@@ -30,8 +30,8 @@
         @if ($recyclers->count())
           @foreach ($recyclers as $recycler)
             <div class="mb-5 rounded-xl bg-gradient-to-b from-[#54b756] to-[#45b25a] p-4">
-              <div class="overflow-hidden rounded-xl border-2 border-primary shadow-lg">
-                <img src="{{ asset('storage/' . $recycler['image']) }}" alt="{{ $recycler['name'] }}" width="100%" />
+              <div class="overflow-hidden rounded-xl border-2 border-primary shadow-lg h-[190px]">
+                <img src="{{ asset('storage/' . $recycler['image']) }}" alt="{{ $recycler['name'] }}" class="w-full object-cover h-full" />
               </div>
               <h3 class="mt-5 mb-3 text-xl font-semibold text-white">
                 {{ $recycler['name'] }}
