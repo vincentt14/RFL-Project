@@ -29,15 +29,15 @@
               class="rounded-xl border-2 border-primary" />
           </div>
           <div class="col-span-1 mb-8 lg:mb-0">
-            <p class="my-2 text-xl text-primary">Recycler name : </p>
+            <p class="mx-5 my-2 text-xl text-primary">Recycler name : </p>
             <p class="mx-5 text-xl font-light text-slate-200">{{ $dummy['name'] }}</p>
           </div>
           <div class="col-span-1 mb-8 lg:mb-0">
-            <p class="my-2 text-xl text-primary">Location : </p>
-            <p class="mx-5 text-xl font-light text-slate-200">{{ $dummy['location'] }}</p>
+            <p class="mx-5 my-2 text-xl text-primary">Location : </p>
+            <p class="mx-5 text-justify text-xl font-light text-slate-200">{{ $dummy['location'] }}</p>
           </div>
           <div class="col-span-1 mb-8 lg:mb-0">
-            <p class="my-2 text-xl text-primary">Description : </p>
+            <p class="mx-5 my-2 text-xl text-primary">Description : </p>
             <p class="mx-5 text-justify text-xl font-light text-slate-200">{{ $dummy['description'] }}</p>
           </div>
 

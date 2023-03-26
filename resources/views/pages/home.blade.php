@@ -104,7 +104,7 @@
   </section>
   <section class="pt-28 pb-24 lg:pt-32 lg:pb-32">
     <div class="container">
-      <div class="flex flex-wrap">
+      <div class="flex flex-wrap px-4">
         <div class="hidden w-full self-center rounded-2xl border-2 border-secondary bg-white px-4 md:block lg:w-1/2">
           {{-- Lottie --}}
           <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

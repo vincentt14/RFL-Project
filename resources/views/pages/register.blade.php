@@ -30,7 +30,7 @@
             <label for="phone" class="text-base font-bold text-primary">
               Phone Number
             </label>
-            <input type="number" id="phone" name="phone"
+            <input type="text" id="phone" name="phone"
               class="w-full rounded-3xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
               required />
           </div>
