@@ -27,34 +27,46 @@
               <label for="name" class="text-base font-bold text-primary">
                 Recycler Name
               </label>
-              <input type="text" id="name" name="name"
-                class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-                autofocus />
+              <input type="text" id="name" name="name" value="{{ @old('name') }}"
+                class="@error('name') border-red-500 @else border-secondary @enderror w-full rounded-xl border-2 bg-white p-3 focus:outline-none focus:ring focus:ring-secondary" />
+              @error('name')
+                <p class="text-red-500">{{ $message }}</p>
+              @enderror
             </div>
             <div class="mb-5 w-full px-4">
               <p class="mb-3 text-base font-bold text-primary">
                 Upload Image
               </p>
               <label
-                class="mr-5 rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-3 px-8 font-bold text-white duration-300 ease-out hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black lg:mb-2">
+                class="@error('image') border-red-500 @else border-secondary @enderror border-2 mr-5 rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-3 px-8 font-bold text-white duration-300 ease-out hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black lg:mb-2">
                 Choose Image
                 <input type="file" id="image" name="image" class="hidden" onchange="previewImage()" />
               </label>
-              <img class="mt-5 w-[350px] img-preview img-fluid rounded-xl">
+              <img class="img-preview img-fluid mt-5 w-[350px] rounded-xl">
+              @error('image')
+                <p class="text-red-500">{{ $message }}</p>
+              @enderror
             </div>
             <div class="mb-5 w-full px-4">
               <label for="location" class="text-base font-bold text-primary">
                 Location
               </label>
               <input type="text" id="location" name="location"
-                class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary" />
+                class="@error('location') border-red-500 @else border-secondary @enderror w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
+                value="{{ @old('location') }}" />
+              @error('location')
+                <p class="text-red-500">{{ $message }}</p>
+              @enderror
             </div>
             <div class="mb-5 w-full px-4">
               <label for="description" class="text-base font-bold text-primary">
                 Description
               </label>
               <textarea id="description" name="description"
-                class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"></textarea>
+                class="@error('description') border-red-500 @else border-secondary @enderror w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary">{{ @old('description') }}</textarea>
+              @error('description')
+                <p class="text-red-500">{{ $message }}</p>
+              @enderror
             </div>
             <div class="w-full px-4">
               <button type="submit"

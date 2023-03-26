@@ -29,8 +29,11 @@
                 Volunteer Name
               </label>
               <input type="text" id="username" name="username"
-                class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-                autofocus value="{{ @old('username', $user->username) }}" />
+                class="@error('username') border-red-500 @else border-secondary @enderror w-full rounded-xl border-2 bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
+                value="{{ @old('username', $user->username) }}" />
+              @error('username')
+                <p class="text-red-500">{{ $message }}</p>
+              @enderror
             </div>
             <div class="mb-5 w-full px-4">
               <label for="email" class="text-base font-bold text-primary">
@@ -45,16 +48,22 @@
                 Phone Number
               </label>
               <input type="text" id="phone_number" name="phone_number"
-                class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
+                class="@error('phone_number') border-red-500 @else border-secondary @enderror bobg-white w-full rounded-xl border-2 p-3 focus:outline-none focus:ring focus:ring-secondary"
                 value="{{ @old('phone_number', $user->phone_number) }}" />
+              @error('phone_number')
+                <p class="text-red-500">{{ $message }}</p>
+              @enderror
             </div>
             <div class="mb-5 w-full px-4">
               <label for="volunteer_date" class="text-base font-bold text-primary">
                 Volunteer Date
               </label>
               <input type="date" id="volunteer_date" name="volunteer_date"
-                class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
+                class="@error('volunteer_date') border-red-500 @else border-secondary @enderror w-full rounded-xl border-2 bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
                 value="{{ @old('volunteer_date', $user->volunteer_date) }}" />
+              @error('volunteer_date')
+                <p class="text-red-500">{{ $message }}</p>
+              @enderror
             </div>
             <div class="w-full px-4">
               <button type="submit"

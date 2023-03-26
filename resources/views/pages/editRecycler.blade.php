@@ -29,8 +29,11 @@
                 Recycler Name
               </label>
               <input type="text" id="name" name="name"
-                class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-                autofocus value="{{ @old('name', $recycler->name) }}" />
+                class="@error('name') border-red-500 @else border-secondary @enderror w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
+                value="{{ @old('name', $recycler->name) }}" />
+              @error('name')
+                <p class="text-red-500">{{ $message }}</p>
+              @enderror
             </div>
             <div class="mb-5 w-full px-4">
               <p class="mb-3 text-base font-bold text-primary">
@@ -43,25 +46,35 @@
                 <input type="file" id="image" name="image" class="hidden" onchange="previewImage()" />
               </label>
               @if ($recycler->image)
-              <img src="{{ asset('storage/' . $recycler->image ) }}" class="mt-5 object-contain w-[350px] max-h-[200px] img-preview img-fluid rounded-xl d-block">
+                <img src="{{ asset('storage/' . $recycler->image) }}"
+                  class="img-preview img-fluid d-block mt-5 max-h-[200px] w-[350px] rounded-xl object-contain">
               @else
-              <img class="mt-5 w-[350px] img-preview img-fluid rounded-xl">
+                <img class="img-preview img-fluid mt-5 w-[350px] rounded-xl">
               @endif
+              @error('image')
+                <p class="text-red-500">{{ $message }}</p>
+              @enderror
             </div>
             <div class="mb-5 w-full px-4">
               <label for="email" class="text-base font-bold text-primary">
                 Location
               </label>
               <input type="text" id="location" name="location"
-                class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
+                class="@error('location') border-red-500 @else border-secondary @enderror w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
                 value="{{ @old('location', $recycler->location) }}" />
+              @error('location')
+                <p class="text-red-500">{{ $message }}</p>
+              @enderror
             </div>
             <div class="mb-5 w-full px-4">
               <label for="description" class="text-base font-bold text-primary">
                 Description
               </label>
               <textarea id="description" name="description"
-                class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary">{{ @old('description', $recycler->description) }}</textarea>
+                class="@error('description') border-red-500 @else border-secondary @enderror w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary">{{ @old('description', $recycler->description) }}</textarea>
+              @error('description')
+                <p class="text-red-500">{{ $message }}</p>
+              @enderror
             </div>
             <div class="w-full px-4">
               <button type="submit"
