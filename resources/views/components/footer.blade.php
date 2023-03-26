@@ -20,7 +20,7 @@
             </a>
           </li>
           <li>
-            <a href="/location" class="mb-2 inline-block text-xl hover:text-white">
+            <a href="/recyclers" class="mb-2 inline-block text-xl hover:text-white">
               Recycle Locations
             </a>
           </li>

@@ -23,11 +23,20 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         User::create([
-            'username' => 'Vincent',
-            'email' => 'vincent@gmail.com',
-            'password' => bcrypt('vincent'),
+            'username' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('admin'),
             'volunteer_date' => date('Y-m-d h:i:s'),
-            'phone_number' => '08080808'
+            'phone_number' => '08080808',
+            'is_admin' => true
+        ]);
+
+        User::create([
+            'username' => 'member',
+            'email' => 'member@gmail.com',
+            'password' => bcrypt('member'),
+            'volunteer_date' => date('Y-m-d h:i:s'),
+            'phone_number' => '08080808',
         ]);
 
         Recycler::create([

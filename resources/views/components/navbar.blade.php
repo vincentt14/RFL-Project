@@ -19,7 +19,7 @@
               <a href="/" class="text-dark mx-8 flex py-2 text-base group-hover:text-primary">Home</a>
             </li>
             <li class="group">
-              <a href="/locations" class="text-dark mx-8 flex py-2 text-base group-hover:text-primary">Recycle
+              <a href="/recyclers" class="text-dark mx-8 flex py-2 text-base group-hover:text-primary">Recycle
                 Locations</a>
             </li>
             <li class="group">

@@ -13,27 +13,40 @@
             class="font-bold">Available</span>.
         </h2>
       </div>
-      <form action="/" method="post">
+      <form action="/recyclers" method="get">
         <div class="mb-5 w-full px-4 md:w-2/5">
-          <input type="text" id="username" name="username"
-            class="w-full rounded-3xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-            placeholder="Search Location" autofocus />
+          <div class="flex">
+            <input type="text" id="search" name="search"
+              class="w-full rounded-l-3xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
+              placeholder="Search by Name" autofocus />
+            <button type="submit"
+              class="rounded-r-3xl border-2 border-secondary bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-3 px-8 font-bold text-white duration-300 ease-out hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black">
+              Search
+            </button>
+          </div>
         </div>
       </form>
       <div class="mt-10 grid w-full grid-cols-1 flex-wrap gap-5 px-4 md:grid-cols-2 lg:grid-cols-4">
-        @foreach ($dummys as $dummy)
-          <div class="mb-5 rounded-xl bg-gradient-to-b from-[#54b756] to-[#45b25a] p-4">
-            <div class="overflow-hidden rounded-xl border-2 border-primary shadow-lg">
-              <img src="https://placehold.jp/300x200.png" alt="{{ $dummy['name'] }}" width="100%" />
+        @if ($recyclers->count())
+          @foreach ($recyclers as $recycler)
+            <div class="mb-5 rounded-xl bg-gradient-to-b from-[#54b756] to-[#45b25a] p-4">
+              <div class="overflow-hidden rounded-xl border-2 border-primary shadow-lg">
+                <img src="https://placehold.jp/300x200.png" alt="{{ $recycler['name'] }}" width="100%" />
+              </div>
+              <h3 class="mt-5 mb-3 text-xl font-semibold text-white">
+                {{ $recycler['name'] }}
+              </h3>
+              <p class="my-3 text-justify text-primary">Location : <span
+                  class="text-black">{{ $recycler['location'] }}</span>
+              </p>
+              <p class="text-justify font-light text-black">{{ $recycler['description'] }}</p>
             </div>
-            <h3 class="mt-5 mb-3 text-xl font-semibold text-white">
-              {{ $dummy['name'] }}
-            </h3>
-            <p class="my-3 text-justify text-primary">Location : <span class="text-black">{{ $dummy['location'] }}</span>
-            </p>
-            <p class="text-justify font-light text-black">{{ $dummy['description'] }}</p>
-          </div>
-        @endforeach
+          @endforeach
+        @else
+          <h2 class="mb-5 mt-2 text-lg font-light text-primary lg:text-2xl">Recycler <span
+              class="font-bold">Not Found</span>.
+          </h2>
+        @endif
       </div>
     </div>
   </section>

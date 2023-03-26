@@ -14,10 +14,15 @@ class RecyclerController extends Controller
      */
     public function index()
     {
-        // return view('pages.dashboard', [
-        //     "recyclers" => Recycler::all(),
-        //     "volunteers" => User::all()
-        // ]);
+        $recyclers = Recycler::latest();
+
+        if (request('search')) {
+            $recyclers->where('name', 'like', '%' . request('search') . '%');
+        }
+
+        return view('pages.locations', [
+            'recyclers' => $recyclers->get()
+        ]);
     }
 
     /**
@@ -25,7 +30,7 @@ class RecyclerController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.create');
     }
 
     /**
@@ -33,7 +38,14 @@ class RecyclerController extends Controller
      */
     public function store(StoreRecyclerRequest $request)
     {
-        //
+        $validate_data = $request->validate([
+            'name' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+        ]);
+
+        Recycler::create($validate_data);
+        return redirect('/dashboard');
     }
 
     /**
@@ -41,7 +53,9 @@ class RecyclerController extends Controller
      */
     public function show(Recycler $recycler)
     {
-        dd($recycler);
+        return view('pages.detail', [
+            "recycler" => $recycler
+        ]);
     }
 
     /**
@@ -49,7 +63,9 @@ class RecyclerController extends Controller
      */
     public function edit(Recycler $recycler)
     {
-        //
+        return view('pages.editRecycler', [
+            "recycler" => $recycler
+        ]);
     }
 
     /**
@@ -57,7 +73,17 @@ class RecyclerController extends Controller
      */
     public function update(UpdateRecyclerRequest $request, Recycler $recycler)
     {
-        //
+
+        $rules = [
+            'name' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        $recycler->update($validatedData);
+        return redirect('/dashboard');
     }
 
     /**
@@ -65,6 +91,7 @@ class RecyclerController extends Controller
      */
     public function destroy(Recycler $recycler)
     {
-        //
+        Recycler::destroy($recycler->id);
+        return redirect('/dashboard');
     }
 }

@@ -21,34 +21,36 @@
 
       <div class="flex flex-wrap">
         <div class="w-full self-center pr-4 lg:w-1/2">
-          <form action="/" method="post">
+          <form action="/recyclers/{{ $recycler['id'] }}" method="post">
+            @method('put')
+            @csrf
             <div class="mb-5 w-full px-4">
-              <label for="username" class="text-base font-bold text-primary">
+              <label for="name" class="text-base font-bold text-primary">
                 Recycler Name
               </label>
-              <input type="text" id="username" name="username"
+              <input type="text" id="name" name="name"
                 class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-                required autofocus />
+                autofocus value="{{ @old('name', $recycler->name) }}" />
             </div>
             <div class="mb-5 w-full px-4">
               <label for="email" class="text-base font-bold text-primary">
                 Location
               </label>
-              <input type="text" id="email" name="email"
+              <input type="text" id="location" name="location"
                 class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-                required />
+                value="{{ @old('location', $recycler->location) }}" />
             </div>
             <div class="mb-5 w-full px-4">
               <label for="description" class="text-base font-bold text-primary">
                 Description
               </label>
               <textarea id="description" name="description"
-                class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"></textarea>
+                class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary">{{ @old('description', $recycler->description) }}</textarea>
             </div>
             <div class="w-full px-4">
               <button type="submit"
                 class="mt-3 w-full rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-3 text-white duration-300 ease-out hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black">
-                Edit
+                Edit Recycler
               </button>
             </div>
           </form>

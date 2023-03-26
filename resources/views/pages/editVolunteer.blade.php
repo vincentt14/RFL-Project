@@ -21,43 +21,45 @@
 
       <div class="flex flex-wrap">
         <div class="w-full self-center pr-4 lg:w-1/2">
-          <form action="/" method="post">
+          <form action="/users/{{ $user['id'] }}" method="post">
+            @method('put')
+            @csrf
             <div class="mb-5 w-full px-4">
               <label for="username" class="text-base font-bold text-primary">
                 Volunteer Name
               </label>
               <input type="text" id="username" name="username"
                 class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-                required autofocus />
+                autofocus value="{{ @old('username', $user->username) }}" />
             </div>
             <div class="mb-5 w-full px-4">
               <label for="email" class="text-base font-bold text-primary">
                 Volunteer Email
               </label>
               <input type="text" id="email" name="email"
-                class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-                required />
+                class="w-full rounded-xl border-2 border-red-300 bg-slate-300 p-3 text-slate-600 focus:outline-none focus:ring focus:ring-secondary"
+                value="{{ @old('email', $user->email) }}" disabled />
             </div>
             <div class="mb-5 w-full px-4">
-              <label for="phone" class="text-base font-bold text-primary">
+              <label for="phone_number" class="text-base font-bold text-primary">
                 Phone Number
               </label>
-              <input type="number" id="phone" name="phone"
+              <input type="number" id="phone_number" name="phone_number"
                 class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-                required />
+                value="{{ @old('phone_number', $user->phone_number) }}" />
             </div>
             <div class="mb-5 w-full px-4">
-              <label for="date" class="text-base font-bold text-primary">
+              <label for="volunteer_date" class="text-base font-bold text-primary">
                 Volunteer Date
               </label>
-              <input type="date" id="date" name="date"
+              <input type="date" id="volunteer_date" name="volunteer_date"
                 class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-                required />
+                value="{{ @old('volunteer_date', $user->volunteer_date) }}" />
             </div>
             <div class="w-full px-4">
               <button type="submit"
                 class="mt-3 w-full rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-3 text-white duration-300 ease-out hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black">
-                Edit
+                Edit Volunteer
               </button>
             </div>
           </form>

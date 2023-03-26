@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamp('volunteer_date');
             $table->string('password');
             $table->string('phone_number');
+            $table->boolean('is_admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

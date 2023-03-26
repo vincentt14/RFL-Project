@@ -25,14 +25,14 @@
             <td class="px-6 py-2">{{ $loop->iteration }}</td>
             <td class="px-6 py-2">{{ $recycle['name'] }}</td>
             <td class="px-6 py-2 text-justify">{{ $recycle['location'] }}</td>
-            <td class="flex px-6 py-2 justify-center">
+            <td class="flex justify-center px-6 py-2">
               <a class="mx-2 text-blue-300" href="/recyclers/{{ $recycle['id'] }}">
                 View
               </a>
-              <a class="mx-2 text-yellow-300" href="/editRecycler">
+              <a class="mx-2 text-yellow-300" href="/recyclers/{{ $recycle['id'] }}/edit">
                 Edit
               </a>
-              <form class="mx-2 text-red-400" action="/recycle/{{ $recycle['id'] }}" method="post" class="d-inline">
+              <form class="mx-2 text-red-400" action="/recyclers/{{ $recycle['id'] }}" method="post" class="d-inline">
                 @method('delete')
                 @csrf
                 <button onClick="return confirm('Are you sure?')">
@@ -79,12 +79,12 @@
             <td class="px-6 py-2">{{ $volunteer['username'] }}</td>
             <td class="px-6 py-2">{{ $volunteer['email'] }}</td>
             <td class="px-6 py-2">{{ $volunteer['phone_number'] }}</td>
-            <td class="px-6 py-2">{{ $volunteer['volunteer_date'] }}</td>
-            <td class="flex px-6 py-2 justify-center">
-              <a class="mx-2 text-yellow-300" href="/editVolunteer">
+            <td class="px-6 py-2">{{ substr($volunteer['volunteer_date'], 0, 10) }}</td>
+            <td class="flex justify-center px-6 py-2">
+              <a class="mx-2 text-yellow-300" href="/users/{{ $volunteer['id'] }}/edit">
                 Edit
               </a>
-              <form class="mx-2 text-red-400" action="/dummy/{{ $volunteer['id'] }}" method="post" class="d-inline">
+              <form class="mx-2 text-red-400" action="/users/{{ $volunteer['id'] }}" method="post" class="d-inline">
                 @method('delete')
                 @csrf
                 <button onClick="return confirm('Are you sure?')">

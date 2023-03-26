@@ -21,22 +21,22 @@
 
       <div class="flex flex-wrap">
         <div class="w-full self-center pr-4 lg:w-1/2">
-          <form action="/" method="post">
+          <form action="/recyclers" method="post">
+            @csrf
             <div class="mb-5 w-full px-4">
-              <label for="username" class="text-base font-bold text-primary">
+              <label for="name" class="text-base font-bold text-primary">
                 Recycler Name
               </label>
-              <input type="text" id="username" name="username"
+              <input type="text" id="name" name="name"
                 class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-                required autofocus />
+                autofocus />
             </div>
             <div class="mb-5 w-full px-4">
-              <label for="email" class="text-base font-bold text-primary">
+              <label for="location" class="text-base font-bold text-primary">
                 Location
               </label>
-              <input type="text" id="email" name="email"
-                class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary"
-                required />
+              <input type="text" id="location" name="location"
+                class="w-full rounded-xl border-2 border-secondary bg-white p-3 focus:outline-none focus:ring focus:ring-secondary" />
             </div>
             <div class="mb-5 w-full px-4">
               <label for="description" class="text-base font-bold text-primary">
