@@ -20,19 +20,19 @@
         </tr>
       </thead>
       <tbody>
-        @foreach ($recyclers as $recycle)
+        @foreach ($recyclers as $recycler)
           <tr class="px-6 py-3 text-center">
             <td class="px-6 py-2">{{ $loop->iteration }}</td>
-            <td class="px-6 py-2">{{ $recycle['name'] }}</td>
-            <td class="px-6 py-2 text-justify">{{ $recycle['location'] }}</td>
+            <td class="px-6 py-2">{{ $recycler['name'] }}</td>
+            <td class="px-6 py-2 text-justify">{{ $recycler['location'] }}</td>
             <td class="flex justify-center px-6 py-2">
-              <a class="mx-2 text-blue-300" href="/recyclers/{{ $recycle['id'] }}">
+              <a class="mx-2 text-blue-300" href="/recyclers/{{ $recycler['id'] }}">
                 View
               </a>
-              <a class="mx-2 text-yellow-300" href="/recyclers/{{ $recycle['id'] }}/edit">
+              <a class="mx-2 text-yellow-300" href="/recyclers/{{ $recycler['id'] }}/edit">
                 Edit
               </a>
-              <form class="mx-2 text-red-400" action="/recyclers/{{ $recycle['id'] }}" method="post" class="d-inline">
+              <form class="mx-2 text-red-400" action="/recyclers/{{ $recycler['id'] }}" method="post" class="d-inline">
                 @method('delete')
                 @csrf
                 <button onClick="return confirm('Are you sure?')">

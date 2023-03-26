@@ -22,16 +22,28 @@
               <a href="/recyclers" class="text-dark mx-8 flex py-2 text-base group-hover:text-primary">Recycle
                 Locations</a>
             </li>
-            <li class="group">
-              <a href="/dashboard" class="text-dark mx-8 flex py-2 text-base group-hover:text-primary">Dashboard</a>
-            </li>
-            <li class="group">
-              <button
-                class="ml-5 rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-2 px-5 text-white duration-300 ease-out font-bold hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black">
-                <a href="/login">Login</a>
-              </button>
-            </li>
 
+            @auth
+              <li class="group">
+                <a href="/dashboard" class="text-dark mx-8 flex py-2 text-base group-hover:text-primary">Dashboard</a>
+              </li>
+              <li class="group">
+                <form action="/logout" method="post">
+                  @csrf
+                  <button type="submit"
+                    class="ml-5 rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-2 px-5 font-bold text-white duration-300 ease-out hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black">
+                    Logout
+                  </button>
+                </form>
+              </li>
+            @else
+              <li class="group">
+                <button
+                  class="ml-5 rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-2 px-5 font-bold text-white duration-300 ease-out hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black">
+                  <a href="/login">Login</a>
+                </button>
+              </li>
+            @endauth
           </ul>
         </nav>
       </div>

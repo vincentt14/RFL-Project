@@ -9,7 +9,8 @@
         </div>
       </div>
       <div class="mx-auto w-4/5 rounded-xl bg-stone-900 p-10 md:w-2/5">
-        <form action="/" method="post">
+        <form action="/login" method="post">
+          @csrf
           <div class="mb-5 w-full px-4">
             <label for="username" class="text-base font-bold text-primary">
               Username

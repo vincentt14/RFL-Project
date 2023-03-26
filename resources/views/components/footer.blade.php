@@ -24,22 +24,36 @@
               Recycle Locations
             </a>
           </li>
-          <li>
-            <a href="/dashboard"class="mb-2 inline-block text-xl hover:text-white">
-              Dashboard
-            </a>
-          </li>
+          @auth
+            <li>
+              <a href="/dashboard"class="mb-2 inline-block text-xl hover:text-white">
+                Dashboard
+              </a>
+            </li>
+          @endauth
+
 
         </ul>
       </div>
       <div class="mb-12 w-full flex-col place-items-center md:flex md:w-1/3">
         <ul class="text-black">
           <h3 class="mb-5 text-xl font-bold text-white">Join RFL</h3>
-          <li>
-            <a href="/login"class="mb-2 inline-block text-xl hover:text-white">
-              Login
-            </a>
-          </li>
+          @auth
+            <li>
+              <form action="/logout" method="post">
+                @csrf
+                <button type="submit" class="mb-2 inline-block text-xl hover:text-white">
+                  Logout
+                </button>
+              </form>
+            </li>
+          @else
+            <li>
+              <a href="/login"class="mb-2 inline-block text-xl hover:text-white">
+                Login
+              </a>
+            </li>
+          @endauth
         </ul>
       </div>
     </div>
