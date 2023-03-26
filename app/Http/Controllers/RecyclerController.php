@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Storage;
 
 class RecyclerController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('admin');
+        $this->middleware('auth')->only('index');
+        $this->middleware('guest')->only('index');
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -45,7 +53,7 @@ class RecyclerController extends Controller
             'description' => 'required',
         ]);
 
-        if($request->file('image')){
+        if ($request->file('image')) {
             $validatedData['image'] = $request->file('image')->store('recycler-images');
         }
 
@@ -83,14 +91,14 @@ class RecyclerController extends Controller
             'name' => 'required',
             'image' => 'image|file|max:1024',
             'location' => 'required',
-            'description' => 'required', 
+            'description' => 'required',
         ];
 
         $validatedData = $request->validate($rules);
 
-        
-        if($request->file('image')){
-            if($request->oldImage){
+
+        if ($request->file('image')) {
+            if ($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
             $validatedData['image'] = $request->file('image')->store('recycler-images');
@@ -105,7 +113,7 @@ class RecyclerController extends Controller
      */
     public function destroy(Recycler $recycler)
     {
-        if($recycler->image){
+        if ($recycler->image) {
             Storage::delete($recycler->image);
         }
         Recycler::destroy($recycler->id);

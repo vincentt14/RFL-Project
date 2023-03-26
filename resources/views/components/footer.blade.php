@@ -24,21 +24,19 @@
               Recycle Locations
             </a>
           </li>
-          @auth
+          @if (auth()->user() !== null && auth()->user()->is_admin == 1)
             <li>
               <a href="/dashboard"class="mb-2 inline-block text-xl hover:text-white">
                 Dashboard
               </a>
             </li>
-          @endauth
-
-
+          @endif
         </ul>
       </div>
       <div class="mb-12 w-full flex-col place-items-center md:flex md:w-1/3">
         <ul class="text-black">
           <h3 class="mb-5 text-xl font-bold text-white">Join RFL</h3>
-          @auth
+          @if (auth()->user() !== null)
             <li>
               <form action="/logout" method="post">
                 @csrf
@@ -53,7 +51,7 @@
                 Login
               </a>
             </li>
-          @endauth
+          @endif
         </ul>
       </div>
     </div>

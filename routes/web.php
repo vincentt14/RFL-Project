@@ -29,7 +29,7 @@ Route::post('/register', [AuthController::class, 'store']);
 
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
-Route::get('/dashboard', [AdminController::class, 'dashboard'])->middleware('auth');
+Route::get('/dashboard', [AdminController::class, 'dashboard'])->middleware('admin');
 
 Route::resources([
     'recyclers'=> RecyclerController::class,

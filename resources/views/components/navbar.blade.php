@@ -23,10 +23,13 @@
                 Locations</a>
             </li>
 
-            @auth
+            @if (auth()->user() !== null && auth()->user()->is_admin == 1)
               <li class="group">
                 <a href="/dashboard" class="text-dark mx-8 flex py-2 text-base group-hover:text-primary">Dashboard</a>
               </li>
+            @endif
+
+            @if (auth()->user() !== null)
               <li class="group">
                 <form action="/logout" method="post">
                   @csrf
@@ -43,7 +46,7 @@
                   <a href="/login">Login</a>
                 </button>
               </li>
-            @endauth
+            @endif
           </ul>
         </nav>
       </div>

@@ -21,8 +21,9 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect('/');
+            return redirect()->intended('/dashboard');
         }
+        return back()->with('loginError', 'Login failed!');
     }
     public function register()
     {
