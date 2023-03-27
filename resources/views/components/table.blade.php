@@ -73,18 +73,19 @@
         </tr>
       </thead>
       <tbody>
-        @foreach ($volunteers as $volunteer)
+        
+        @for($i = 0; $i < count($volunteers); $i++)
           <tr class="px-6 py-3 text-center">
-            <td class="px-6 py-2">{{ $loop->iteration }}</td>
-            <td class="px-6 py-2">{{ $volunteer['username'] }}</td>
-            <td class="px-6 py-2">{{ $volunteer['email'] }}</td>
-            <td class="px-6 py-2">{{ $volunteer['phone_number'] }}</td>
-            <td class="px-6 py-2">{{ substr($volunteer['volunteer_date'], 0, 10) }}</td>
+            <td class="px-6 py-2">{{ $i + 1 }}</td>
+            <td class="px-6 py-2">{{ $volunteers[$i]->username }}</td>
+            <td class="px-6 py-2">{{ $volunteers[$i]->email }}</td>
+            <td class="px-6 py-2">{{ $volunteers[$i]->phone_number }}</td>
+            <td class="px-6 py-2">{{ substr($volunteers[$i]->volunteer_date, 0, 10) }}</td>
             <td class="flex justify-center px-6 py-2">
-              <a class="mx-2 text-yellow-300" href="/users/{{ $volunteer['id'] }}/edit">
+              <a class="mx-2 text-yellow-300" href="/users/{{ $volunteers[$i]->id }}/edit">
                 Edit
               </a>
-              <form class="mx-2 text-red-400" action="/users/{{ $volunteer['id'] }}" method="post" class="d-inline">
+              <form class="mx-2 text-red-400" action="/users/{{ $volunteers[$i]->id }}" method="post" class="d-inline">
                 @method('delete')
                 @csrf
                 <button onClick="return confirm('Are you sure?')">
@@ -93,7 +94,7 @@
               </form>
             </td>
           </tr>
-        @endforeach
+        @endfor
       </tbody>
     </table>
   </div>

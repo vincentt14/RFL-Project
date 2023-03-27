@@ -32,17 +32,38 @@ class DatabaseSeeder extends Seeder
             'volunteer_date' => date('Y-m-d h:i:s'),
             'phone_number' => '012345',
         ]);
+        User::create([
+            'username' => 'member2',
+            'email' => 'member2@gmail.com',
+            'password' => bcrypt('member2'),
+            'volunteer_date' => date('Y-m-d h:i:s'),
+            'phone_number' => '012345',
+        ]);
+        User::create([
+            'username' => 'member3',
+            'email' => 'member3@gmail.com',
+            'password' => bcrypt('member3'),
+            'volunteer_date' => date('Y-m-d h:i:s'),
+            'phone_number' => '012345',
+        ]);
+        User::create([
+            'username' => 'member4',
+            'email' => 'member4@gmail.com',
+            'password' => bcrypt('member4'),
+            'volunteer_date' => date('Y-m-d h:i:s'),
+            'phone_number' => '012345',
+        ]);
 
         Recycler::create([
             'name' => 'USJ 1 Recycling Centre',
-            'image' => 'recycler-images/rTLbk19Wek00CEyxqliKq8AFbL6pdiRtg9oLPyVr.jpg',
+            'image' => 'recycler-images/uqIlplSotoNKxhgDVBSkaHaPVP2XaRRLHo19QUyG.jpg',
             'location' => 'Taman Subang Mewah, Subang Jaya, Selangor, Malaysia',
             'description' => 'USJ 1 Recycling Centre is a one of many recycle center in Malaysia, USJ 1 Recycling Centre is located in Kampung Baru Subang, Selangor. This business is working in the following industry: Recycling centers.'
         ]);
 
         Recycler::create([
             'name' => 'DACING TRADING SDN BHD',
-            'image' => 'recycler-images/McBkvofWo8xc59IuW03FxmtajjcgsSerUSe8U6Ns.jpg',
+            'image' => 'recycler-images/wLdofoQyWGQt6CdLc4xEkTcxQVN9950rlkEwUSvS.jpg',
             'location' => 'Jalan tiga, Subang Light Industrial Park, Malaysia',
             'description' => 'Established in 2006, Dacing Perkasa SDN BHD is a visionary and innovative organization, specializing in the procurement of recycled products and converting them into products that shall meet the raw material requirements of our clients.'
         ]);
