@@ -13,9 +13,9 @@
           </h1>
           <h2 class="mb-2 mt-2 text-justify text-lg font-light text-primary lg:text-2xl">We offer FREE pickup from your
             address and pay you upon collection. Electronic trade-in & recycling made easy & rewarding.</h2>
-          <p class="mb-10 max-w-md text-slate-500">
-            "Our nearby Heroes are ready to collect!"
-            <span class="mt-1 block text-secondary">- Recycle.</span>
+          <p class="mb-10 max-w-md text-slate-400">
+            "Our nearby Volunteers are ready to collect!"
+            <span class="mt-1 block text-secondary">- RFL.</span>
           </p>
           <button
             class="mb-5 rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-3 px-8 font-bold text-white duration-300 ease-out hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black md:mb-16 lg:mb-20">
@@ -119,11 +119,11 @@
           </h1>
           <h2 class="mb-2 mt-10 text-justify text-lg font-light text-primary lg:text-xl">We recycle 100% of the e-waste
             we collect with a government-licensed recycling facility. Recycling your e-waste is one of the best ways to
-            offset your GHG-emissions.</h2>
+            improve your environtment.</h2>
           <h2 class="mb-2 mt-4 text-justify text-lg font-light text-primary lg:text-xl">Rapid, Reliable, Rewarding - 5/5
             star rating with over 5,000+ happy customers :)</h2>
           <h2 class="mb-10 mt-4 text-justify text-lg font-light text-primary lg:text-xl">Get Paid to Recycle Right Now,
-            100+ Heroes within 10km from you ready to collect!</h2>
+            100+ Volunteers within 10km from you ready to collect!</h2>
 
           <button
             class="btnn rounded-3xl bg-gradient-to-r from-[#89c84d] to-[#45b25a] py-3 px-8 font-bold text-white duration-300 ease-out hover:from-[#45b25a] hover:to-[#89c84d] hover:text-black md:mb-10">

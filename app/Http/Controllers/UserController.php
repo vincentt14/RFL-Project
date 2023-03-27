@@ -13,38 +13,6 @@ class UserController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(User $user)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(User $user)
@@ -69,7 +37,8 @@ class UserController extends Controller
         $validateData = $request->validate($rules);
 
         $user->update($validateData);
-        return redirect('/dashboard')->with('success', 'Volunteer was updated successfully');;
+        return redirect('/dashboard')->with('success', 'Volunteer was updated successfully');
+        ;
     }
 
     /**
@@ -78,6 +47,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         User::destroy($user->id);
-        return redirect('/dashboard')->with('success', 'Volunteer was deleted successfully');;
+        return redirect('/dashboard')->with('success', 'Volunteer was deleted successfully');
+        ;
     }
 }

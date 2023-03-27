@@ -23,7 +23,8 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             $redirectLink = '/';
-            if (Auth::user()->is_admin == 1) $redirectLink = '/dashboard';
+            if (Auth::user()->is_admin == 1)
+                $redirectLink = '/dashboard';
 
             return redirect()->intended($redirectLink)->with('success', 'Logged in successfully as ' . Auth::user()->username);
         }

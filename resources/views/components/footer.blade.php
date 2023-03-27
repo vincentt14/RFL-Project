@@ -4,11 +4,12 @@
       <div class="mb-12 w-full flex-col place-items-center font-medium md:flex md:w-1/3">
         <ul>
           <h2 class="text-4xl font-bold text-black">RFL.</h2>
-          <h3 class="mb-2 text-2xl font-bold text-black">Founder
+          <h3 class="mb-2 text-2xl font-bold text-black">Team
           </h3>
-          <p class="text-xl text-white">Vincent</p>
-          <p class="text-xl text-white">Rucci</p>
-          <p class="text-xl text-white">Darren</p>
+          <p class="text-xl text-white">Wan Jun Hao</p>
+          <p class="text-xl text-white">Lew Wee Seng</p>
+          <p class="text-xl text-white">Ethan</p>
+          <p class="text-xl text-white">Asim</p>
         </ul>
       </div>
       <div class="mb-12 w-full flex-col place-items-center md:flex md:w-1/3">

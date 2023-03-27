@@ -10,8 +10,4 @@ class Recycler extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-
-    // public function scopeFilter($query, array $filters){
-
-    // }
 }
