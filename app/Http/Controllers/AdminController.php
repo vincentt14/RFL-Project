@@ -14,7 +14,7 @@ class AdminController extends Controller
         return view('pages.dashboard', [
             "recyclers" => Recycler::all(),
             // "volunteers" => User::all()
-            "volunteers" => User::where('is_admin' == false)
+            "volunteers" => User::where('is_admin' == true)
         ]);
     }
 }
